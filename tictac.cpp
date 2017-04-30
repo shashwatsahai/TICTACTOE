@@ -133,7 +133,12 @@ int checkmove(int a[3][3],int cur)
 }
  int checkloss(int tboard[3][3],int cur)
 {static int los=0;
-
+if(count<2&&tboard[1][1]==2)
+{
+    aili=2;
+    ailj=2;
+    return 1;
+}
 if(checkmove(tboard,cur))
 {
     return 1;
@@ -268,7 +273,6 @@ int main()
         if(ret==1)
             {
                 cout<<"\nWIn Acc to minimax i and j"<<aiwi<<aiwj;
-                cin>>b;
                 p2i=aiwi;
                 p2j=aiwj;
             }
